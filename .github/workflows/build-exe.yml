@@ -31,39 +31,6 @@ jobs:
 
     - name: Carica l'Artefatto
       uses: actions/upload-artifact@v4
-name: Compila EXE
-
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: windows-latest
-
-    steps:
-    - name: Checkout del codice
-      uses: actions/checkout@v4
-
-    - name: Setup Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-
-    - name: Installa PyInstaller
-      run: |
-        python -m pip install --upgrade pip
-        pip install pyinstaller
-        # Se il tuo script usa librerie esterne (es. requests, pillow), aggiungile qui sotto:
-        # pip install tk requests
-
-    - name: Compila in EXE
-      run: |
-        pyinstaller --noconfirm --onefile --windowed "orario_widget.py"
-
-    - name: Carica l'Artefatto
-      uses: actions/upload-artifact@v4
       with:
         name: OrarioWidget-Windows
         path: dist/OrarioWidget.exe
