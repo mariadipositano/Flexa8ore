@@ -33,8 +33,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: OrarioWidget-Windows
-        path: dist/OrarioWidget.exe
-ai destinatari indicati in indirizzo e può contenere informazioni legalmente 
-privilegiate e/o confidenziali. 
-Se avete ricevuto questa mail per errore siete pregati di informare il mittente, 
-distruggerne il contenuto nonché la mail stessa. 
+        path: dist/OrarioWidget.ex
